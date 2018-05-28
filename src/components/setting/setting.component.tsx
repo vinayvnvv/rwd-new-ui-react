@@ -5,12 +5,13 @@ import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { createMuiTheme } from '@material-ui/core/styles';
+import { IPageLoader, IPathModel } from './../../services/model';
 
 import './setting.component.css';
 
 interface IState {
-  input_path: any;
-  pageLoader: boolean;
+  input_path: IPathModel;
+  pageLoader: IPageLoader;
 }
 
 export class Setting extends React.Component<{}, IState> {
@@ -20,10 +21,13 @@ export class Setting extends React.Component<{}, IState> {
     super(props);
     this.httpService = new HttpService();
     this.state = {
-        input_path: "fsfsdfsdf",
-        pageLoader: true
+        input_path: {value: ""},
+        pageLoader: {
+          loading: true,
+          title: 'Loading'
+        }
       };
-    this.checkInputFolder();
+    this.getProcessPath();
     console.log(createMuiTheme())
   }
 
@@ -38,9 +42,21 @@ export class Setting extends React.Component<{}, IState> {
 
   public checkInputFolder() {
   	console.log("calling fun")
+    this.setState({pageLoader: {loading: true, title: "Checking Files in paths"}});
   	new HttpService().checkInputFolder()
         .then((res)=> {
-          this.setState({pageLoader: false})
+          this.setState({pageLoader: {loading: false}});
+        })
+  }
+
+  public getProcessPath() {
+    console.log("calling fun")
+    this.state.pageLoader.title = "Getting Paths";
+    new HttpService().getProcessPath()
+        .then((res)=> {
+          this.setState({input_path: { value: res.data.input_path}});
+          this.setState({pageLoader: {loading: false}});
+          this.checkInputFolder();
         })
   }
   public render() {
@@ -51,11 +67,11 @@ export class Setting extends React.Component<{}, IState> {
       		<div className="_right">actions</div>
       	</div>
       	<div className="_cont">
-        { this.state.pageLoader ? (
+        { this.state.pageLoader.loading ? (
           <div className="_full-page-loader">
             <div className="_cont_">
                <CircularProgress  />
-              <div className="_title">Loading..</div>
+              <div className="_title">{this.state.pageLoader.title ? this.state.pageLoader.title : 'Loading..'}</div>
             </div>
           </div>) : (
         
@@ -71,7 +87,7 @@ export class Setting extends React.Component<{}, IState> {
     		        inputProps={{
     		          'aria-label': 'Description',
     		        }}
-                value={this.state.input_path}
+                value={this.state.input_path.value}
                 onChange={ this.onInputChange.bind(this, 'input_path') }
     		      />
             </Grid>

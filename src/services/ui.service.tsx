@@ -22,7 +22,7 @@ export class SideDrawer {
 	}
 
 	public hideOnMobile() {
-		if(window.innerWidth < createMuiTheme().breakpoints.values.sm)
+		if(window.innerWidth < createMuiTheme().breakpoints.values.md)
 			this.hide();
 	}
 }
