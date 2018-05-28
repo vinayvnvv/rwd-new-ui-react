@@ -1,0 +1,6 @@
+html, body {
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  margin: 0 auto; }
+  @media screen and (max-width: 960px) {
+    html.app-nav-scroll-hidden-on-mobile, body.app-nav-scroll-hidden-on-mobile {
+      overflow-y: hidden; } }

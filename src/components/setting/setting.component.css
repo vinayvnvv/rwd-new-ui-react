@@ -1,0 +1,18 @@
+._setting ._st_items {
+  margin: 0 21px; }
+  ._setting ._st_items > ._itm {
+    padding: 21px 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(217, 217, 217, 0.39); }
+    ._setting ._st_items > ._itm input[type=text] {
+      min-width: 100%; }
+    ._setting ._st_items > ._itm > .label {
+      font-size: 15px;
+      font-weight: 500;
+      color: #222; }
+    ._setting ._st_items > ._itm > .field .input {
+      min-width: 70%;
+      max-width: 500px; }
+      @media screen and (max-width: 960px) {
+        ._setting ._st_items > ._itm > .field .input {
+          min-width: 100%; } }
