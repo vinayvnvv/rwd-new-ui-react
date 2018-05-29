@@ -10,9 +10,20 @@
       font-size: 15px;
       font-weight: 500;
       color: #222; }
-    ._setting ._st_items > ._itm > .field .input {
-      min-width: 70%;
-      max-width: 500px; }
-      @media screen and (max-width: 960px) {
-        ._setting ._st_items > ._itm > .field .input {
-          min-width: 100%; } }
+    ._setting ._st_items > ._itm > .field {
+      position: relative; }
+      ._setting ._st_items > ._itm > .field .input {
+        width: 85%; }
+        @media screen and (max-width: 960px) {
+          ._setting ._st_items > ._itm > .field .input {
+            width: 80%; } }
+      ._setting ._st_items > ._itm > .field > ._msg {
+        position: absolute;
+        bottom: -17px;
+        left: 0;
+        font-size: 12px;
+        font-weight: 500; }
+        @media screen and (max-width: 960px) {
+          ._setting ._st_items > ._itm > .field > ._msg {
+            position: relative;
+            bottom: -5px; } }

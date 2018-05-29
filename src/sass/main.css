@@ -5,6 +5,15 @@ html, body {
     html.app-nav-scroll-hidden-on-mobile, body.app-nav-scroll-hidden-on-mobile {
       overflow-y: hidden; } }
 
+.text-success {
+  color: #0f7b0c; }
+
+.text-warning {
+  color: #f44336; }
+
+.text-info {
+  color: #2196f3; }
+
 .only-mobile {
   display: none; }
 

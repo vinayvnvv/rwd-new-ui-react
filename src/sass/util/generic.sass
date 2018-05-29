@@ -1,7 +1,15 @@
 @import './mixins.sass'
+@import './vars.sass'
 html, body
 	font-family: Roboto,Helvetica Neue,sans-serif
 	margin: 0 auto
 	&.app-nav-scroll-hidden-on-mobile
 		+media-only-mobile
 			overflow-y: hidden
+
+.text-success
+	color: $success
+.text-warning
+	color: $warning
+.text-info
+	color: $info
