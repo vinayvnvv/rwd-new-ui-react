@@ -180,7 +180,7 @@ export class Setting extends React.Component<{}, IState> {
                         Check
                     </Button>
                  ) : (
-                      <CircularProgress size={30} />
+                      <CircularProgress size={33} />
                  )
               }
 
@@ -201,7 +201,7 @@ export class Setting extends React.Component<{}, IState> {
                 value={this.state.output_path_value}
                 onChange={ this.onInputChange.bind(this, 'output_path_value') }
               />
-              { this.state.input_path.message ? (
+              { this.state.output_path.message ? (
               <div className={"_msg " + (this.state.output_path.msgStatus === 'success' ? 'text-success' : (this.state.output_path.msgStatus === 'info' ? 'text-info' : 'text-warning'))}>{this.state.output_path.message}</div>) : ''
               }
               
@@ -214,7 +214,7 @@ export class Setting extends React.Component<{}, IState> {
                           Check
                       </Button>
                    ) : (
-                        <CircularProgress size={30} />
+                        <CircularProgress size={33} />
                    )
                 }
             </Grid>

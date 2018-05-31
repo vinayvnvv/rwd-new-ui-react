@@ -12,7 +12,7 @@ export class AppNav extends React.Component<{}, any> {
 			    	navs: [
 			    				{name: "Home", link: '/', icon: 'home'},
 			    				{name: "Settings", link: '/setting', icon: 'settings'},
-			    				{name: "Trash", link: '/trash', icon: 'delete'},
+			    				{name: "Review", link: '/review', icon: 'visibility'},
 			    				{name: "Dashboard", link: '/dashboard', icon: 'dashboard'},
 			    				{name: "Inbox", link: '/inbox', icon: 'inbox'}
 			    		  ]

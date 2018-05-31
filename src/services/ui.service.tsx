@@ -26,3 +26,23 @@ export class SideDrawer {
 			this.hide();
 	}
 }
+
+
+export class HeaderEvents {
+	private appSelector: string = "app";
+	private scrollHideClassSelector: string = "scrolling-bottom";
+	public liveHideOnTopScroll() {
+		const el: Element = document.getElementsByClassName(this.appSelector)[0];
+		let lastScrollPos = 0;
+		window.addEventListener("scroll", (ev: UIEvent)=> {
+			// const rect: ClientRect = document.body.getBoundingClientRect();
+			const current = window.scrollY;
+			// console.log(window.scrollY, rect)
+			if (current < lastScrollPos)
+				el.classList.remove(this.scrollHideClassSelector)
+			else
+				el.classList.add(this.scrollHideClassSelector)
+			lastScrollPos = current;
+		})
+	}
+}

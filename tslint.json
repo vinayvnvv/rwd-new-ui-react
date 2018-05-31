@@ -11,6 +11,7 @@
   	 "ordered-imports": false,
      "no-console": false,
      "curly": false,
-     "jsx-boolean-value": false
+     "jsx-boolean-value": false,
+     "max-classes-per-file": [true, 10]
   }
 }

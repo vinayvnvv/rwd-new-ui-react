@@ -73,6 +73,9 @@ html, body {
   width: 100%;
   align-items: center;
   z-index: 100; }
+  @media screen and (max-width: 960px) {
+    .app > .app-header {
+      transition: 0.34s all; } }
 
 .app > .app-nav-content {
   margin-top: 62px; }
@@ -118,7 +121,7 @@ html, body {
     margin-left: calc(220px + 0px); }
   @media screen and (max-width: 960px) {
     .app > .app-nav-content.active > .app-nav-bg-drop {
-      position: absolute;
+      position: fixed;
       background-color: #000;
       top: 0;
       left: 0;
@@ -143,6 +146,9 @@ html, body {
   @media screen and (min-width: 961px) {
     .app-nav-content > .app-content .lyt-cnt > ._hdr {
       width: calc(100% - 74px - (2*21px)); } }
+  @media screen and (max-width: 960px) {
+    .app-nav-content > .app-content .lyt-cnt > ._hdr {
+      transition: 0.34s all; } }
   .app-nav-content > .app-content .lyt-cnt > ._hdr > ._ttl {
     display: flex;
     align-items: center;
@@ -183,6 +189,14 @@ html, body {
 @media screen and (min-width: 961px) {
   .app-nav-content.active > .app-content .lyt-cnt > ._hdr {
     width: calc(100% - 220px - (2*21px)); } }
+
+@media screen and (max-width: 960px) {
+  .app.scrolling-bottom > .app-header {
+    transform: translateY(-62px); }
+  .app.scrolling-bottom > .app-nav-content {
+    transition: 0.34s all; }
+    .app.scrolling-bottom > .app-nav-content > .app-content .lyt-cnt > ._hdr {
+      transform: translateY(-62px); } }
 
 @keyframes pageSlide {
   from {

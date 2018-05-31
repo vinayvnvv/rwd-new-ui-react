@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './home.component.css';
+import './review.component.css';
 // import Button from '@material-ui/core/Button';
 
 interface IState {
 	view: string
 }
 
-export class Home extends React.Component<{}, IState> {
+export class Review extends React.Component<{}, IState> {
   public state: IState;
   constructor(props: any) {
     super(props);
@@ -17,9 +17,9 @@ export class Home extends React.Component<{}, IState> {
 
   public render() {
     return (
-      <div className="lyt-cnt _home">
+      <div className="lyt-cnt">
         <div className="_hdr">
-          <div className="_ttl"> Home </div>
+          <div className="_ttl"> Review </div>
           <div className="_right">actions</div>
         </div>
         <div className="_cont">This is content</div>

@@ -6,12 +6,14 @@ import { AppHeader } from './components/app-header/app-header.component';
 import { AppNav } from './components/app-nav/app.nav.component';
 import { Home } from './components/home/home.component';
 import { Setting } from './components/setting/setting.component';
-import { SideDrawer } from './services/ui.service'
+import { Review } from './components/review/review.component';
+import { SideDrawer, HeaderEvents } from './services/ui.service'
 
 class App extends React.Component {
 
   public closeSideDrawer() {
     new SideDrawer().hide();
+    new HeaderEvents().liveHideOnTopScroll();
   }
   public render() {
     return (
@@ -28,6 +30,7 @@ class App extends React.Component {
                    <div>
                      <Route exact={true} path="/" component={Home} />
                      <Route path="/setting" component={Setting} />
+                     <Route path="/review" component={Review} />
                    </div>
                  
                </div>
